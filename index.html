@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yan Bastos | DOCTYPE</title>
+
+    <!-- LINKS -->
+    <link rel="stylesheet" href="/scr/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="" />
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="">Yan Bastos|DOCTYPE</a>
+            </div>
+            <ul class="links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about">Sobre mim</a></li>
+                <li><a href="#portifolio">Projetos</a></li>
+                <li><a href="#Contact">Contato</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="drop_menu">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#about">Sobre mim</a></li>
+            <li><a href="#portifolio">Portifólio</a></li>
+            <li><a href="#Contact">Contato</a></li>
+        </div>
+
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="home">
+                <div class="text-container">
+                    <h1>Yan Bastos.</h1>
+                </div>
+
+                <h3>Web developer | Web designer</h3>
+
+                <p>Desenvolvimento Web sob medida
+                    para <br> atender às necessidades
+                    específicas<br> do seu negócio</p>
+            </div>
+            <li id="action_button">
+                <a href="http://web.whatsapp.com/send?phone=555192311207" target="_blank" class="action_button">
+                    CONTATO</a>
+            </li>
+
+        </section>
+    </main>
+
+
+    <!-- SERVIÇOS - SERVICES -->
+
+    <section id="services">
+
+        <div class="headline">
+            <h2>Serviços</h2>
+        </div>
+        <div class="card-container">
+
+            <div class="card">
+                <p class="card-head">Web Developer</p>
+                <i class="fa-solid fa-code"></i>
+                <p class="card-text">Serviço de desenvolvimento web oferece soluções personalizadas e eficientes
+                    para construir sites e aplicações web de alta qualidade.</p>
+            </div>
+            <div class="card">
+                <p class="card-head">Web Design</p>
+                <i class="fa-solid fa-pen-nib"></i>
+                <p class="card-text"> Transformo sua visão em realidade,
+                    criando um site esteticamente atraente, fácil de navegar e otimizado para dispositivos móveis.</p>
+            </div>
+            <div class="card">
+                <p class="card-head">Gerenciamento</p>
+                <i class="fa-solid fa-gears"></i>
+                <p class="card-text">Não deixe seu site ao acaso,faço a manutenção contínua e alterções, para que você
+                    possa aproveitar ao máximo seu investimento online.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SOBRE - ABOUT -->
+
+    <section id="about">
+
+
+        <div class="headline">
+            <h2>Sobre Mim</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    Sempre curioso e dedicado as minhas inveções, busco trazer meu potencial, dedicação e estudos com
+                    desenvolvimento web, sou muito determinado a realizar meus sonhos, objetivos e nada me para, hoje
+                    trabalho de forma autonoma na area da tecnologia e vamos chegar longe juntos...
+                </p>
+
+            </div>
+            <div class="img">
+                <img src="/assets/perfil.png" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="portifolio">
+        <div class="headline">
+            <h2>Projetos</h2>
+        </div>
+        <div class="portifolio-container">
+            <div class="card-portifolio">
+                <img class="project-img" src="/assets/mproject2.png" alt="">
+                <p><a href="" class="card-text">Site Mateus Andrade</a></p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTATO - CONTACT -->
+
+    <section id="Contato">
+        
+        <!-- FORMULÁRIO - FORMULARIO -->
+
+        <section class="contact">
+            <form id="form" action="" method="post">
+                <div class="nameID">
+                    <label for="">Nome:</label>
+                    <input type="text">
+                </div>
+                <div class="emailID">
+                    <label for="">Email:</label>
+                    <input type="text">
+                </div>
+                <div class="telID">
+                    <label for="">Telefone:</label>
+                    <input type="text">
+                </div>
+                <div class="submitID">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <input id="submit" type="submit" value="Enviar">
+                </div>
+            </form>
+            </form>
+        </section>
+
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="footer">
+            <p><a id="doctype" href="http://web.whatsapp.com/send?phone=5551992908052" target="_blank">
+                    ©2023 By Yan Bastos|DOCTYPE </a></p>
+        </div>
+    </footer>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const DropDownMenu = document.querySelector('.drop_menu')
+
+        toggleBtn.onclick = function () {
+            DropDownMenu.classList.toggle('open')
+            const isOpen = DropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+    </script>
+</body>
+
+</html>

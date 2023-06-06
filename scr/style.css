@@ -1,0 +1,742 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #1c1c1c;
+}
+
+
+/* SCROLL */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1c1c1c;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: #00ff00;
+}
+
+#vaction_button a {
+    color: #00ff00;
+}
+
+/* NAV */
+
+
+header {
+    background-color: #2c2d32;
+    position: fixed;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .links a {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_button {
+    border: #00ff00 solid 2px;
+    color: #00ff00;
+    padding: 0.5rem 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2 ease;
+}
+
+.action_button:hover {
+    scale: 1.05;
+    color: #fff;
+    border: #fff solid 2px;
+}
+
+.action_button:active {
+    scale: 0.95;
+}
+
+/* DROP_MENU */
+
+.drop_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drop_menu.open {
+    height: 290px;
+}
+
+.drop_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop_menu .action_button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* MAIN */
+
+section#home {
+
+    background-position: center;
+
+    background: linear-gradient(-45deg, #57c257, #1c1c1c, #fff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+
+    height: calc(95vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* CURSOR BLINKING */
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* TYPING EFFECT */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+text-container {
+    display: flex;
+}
+
+h1 {
+    width: 100%;
+    letter-spacing: 10px;
+    font-size: 5rem;
+    border-right: 5px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(11),
+        cursor .4s step-end infinite alternate;
+}
+
+h3 {
+    letter-spacing: 2.6px;
+    font-size: 2rem;
+    color: #00ff00;
+}
+
+
+#home p {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+#action_button {
+    margin: 50px;
+}
+
+
+
+@media(max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_button {
+        display: none;
+    }
+
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .drop_menu {
+        display: block;
+    }
+}
+
+/* SEVICES */
+
+#services {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-around;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(/assets/topographic-backgroung-02.svg);
+}
+
+.headline {
+    font-size: 2rem;
+}
+
+#services i {
+    font-size: 3rem;
+    color: #fff;
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    text-align: left;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    background-color: #2c2d32;
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100%);
+    height: calc(100%);
+    background: linear-gradient(45deg, #ffff00, #001aff, #00ff00);
+    background-size: 300%;
+    animation: AnimarBorda 8s linear infinite;
+}
+
+@keyframes AnimarBorda {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+.card-head {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin: 10px;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 20px;
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
+    margin: 30px;
+}
+
+/* ABOUT */
+
+#about {
+    background-color: #2c2d32;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 2rem;
+    color: #fff;
+    text-align: left;
+    align-items: center;
+    width: 50%;
+}
+
+.about-text p {
+    margin: 100px;
+    padding: 50px;
+}
+
+.img {
+    width: 50%;
+}
+
+.img img {
+    width: 50%;
+}
+
+
+/* PORTIFOLIO */
+
+#portifolio {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    background-image: url(/assets/topographic-backgroung-02.svg);
+}
+
+.portifolio-container {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card-portifolio {
+    width: 600px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+.project-img {
+    width: 100%;
+}
+
+/* FOOTER */
+
+#footer {
+    width: 100%;
+    background-color: #1c1c1c;
+    padding: 20px
+}
+
+#footer p {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* CONTATO */
+
+
+#Contato {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+}
+
+.contact-links-container {
+    background-color: #1c1c1c;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 50px;
+    color: #fff;
+    text-align: left;
+    align-items: center;
+}
+
+.contact-links {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.contact-links-text {
+    font-size: 2rem;
+}
+
+i {
+    margin-right: 10px;
+}
+
+/* FORMULARIO */
+
+
+.contact {
+    width: 50%;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+label {
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.nameID,
+.emailID,
+.telID {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+input {
+    height: 50px;
+    background-color: #fff;
+    border: 0px;
+}
+
+textarea {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fff;
+    border: 0px;
+}
+
+.submitID {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 20px;
+    width: 80%;
+}
+
+input:hover {
+    border: #00ff00 solid 3px;
+    transition: 200ms;
+}
+
+#submit:hover {
+    background-color: #00ff00;
+    transition: .5s;
+}
+
+textarea:hover {
+    border: #00ff00 solid 3px;
+    transition: 200ms;
+}
+
+#Contato {
+    background-color: #2c2d32;
+    padding: 20px;
+}
+
+
+@media(max-width: 992px) {
+
+    /*  HOME */
+
+    .home {
+        width: 100%;
+    }
+
+    /* SEVICES */
+
+    #services {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        justify-content: space-around;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center top;
+        background-size: cover;
+        background-image: url(/assets/topographic-backgroung-02.svg);
+    }
+
+
+    #services i {
+        font-size: 3rem;
+        color: #fff;
+        margin: 20px;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        background-color: #2c2d32;
+    }
+
+    .card::before,
+    .card::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: calc(99, 5%);
+        height: calc(100%);
+        background: linear-gradient(45deg, #ffff00, #001aff, #00ff00);
+        background-size: 300%;
+        animation: AnimarBorda 8s linear infinite;
+    }
+
+
+    /* ABOUT */
+
+    .about-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        color: #fff;
+        text-align: left;
+        align-items: center;
+        width: 100%;
+    }
+
+    .about-text p {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .img img {
+        width: 80%;
+    }
+
+
+    /* PORTIFOLIO */
+
+    #portifolio {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center top;
+        background-size: cover;
+        background-image: url(/assets/topographic-backgroung-02.svg);
+    }
+
+    .portifolio-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .card-portifolio {
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+
+
+
+
+    /* FORMULARIO */
+
+
+    .contact {
+        width: 100%;
+    }
+
+    .submit {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    label {
+        color: #fff;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .nameID,
+    .emailID,
+    .telID {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    input {
+        height: 50px;
+        background-color: #fff;
+        border: 0px;
+    }
+
+    textarea {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #fff;
+        border: 0px;
+    }
+
+    .submitID {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        gap: 20px;
+        width: 80%;
+    }
+
+
+    #Contato {
+        background-color: #2c2d32;
+        padding: 20px;
+
+    }
+
+    /* HOME */
+
+    .home {
+        padding: 10px;
+        width: auto;
+    }
+
+    .home h3 {
+        font-size: 1.1rem;
+    }
+
+    .text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+
+}
